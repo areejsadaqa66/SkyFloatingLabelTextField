@@ -590,10 +590,10 @@
             </objects>
             <point key="canvasLocation" x="1562" y="758"/>
         </scene>
-        <!--With Left Right Images View Controller-->
+        <!--With Clickable Left Right Images View Controller-->
         <scene sceneID="XuI-9A-SMe">
             <objects>
-                <viewController id="53y-OO-8Dg" customClass="WithLeftRightImagesViewController" customModule="SkyFloatingLabelTextFieldExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="53y-OO-8Dg" customClass="WithClickableLeftRightImagesViewController" customModule="SkyFloatingLabelTextFieldExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GjG-qi-FhL"/>
                         <viewControllerLayoutGuide type="bottom" id="ThI-Dg-Dhl"/>

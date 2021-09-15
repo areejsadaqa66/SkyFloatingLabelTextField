@@ -105,7 +105,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
         }
     }
 
-    fileprivate func updatePlaceholder() {
+     public func updatePlaceholder() {
         guard let placeholder = placeholder, let font = placeholderFont ?? font else {
             return
         }
@@ -712,7 +712,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
             height -= errorHeight()
         }
         let rect = CGRect(
-            x: 0,
+            x: placeholderXPadding,
             y: titleHeight(),
             width: bounds.size.width,
             height: height
@@ -858,4 +858,70 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
         }
         return titleFormatter(title)
     }
+    
+    
+    // MARK: - Areej Modified Properties For Right and Left Image
+    open var leftImageViewTapped: (() -> Void)?
+    open var rightImageViewTapped: (() -> Void)?
+    
+    @IBInspectable dynamic open var placeholderText: String? {
+        didSet {
+            self.placeholder = placeholderText
+        }
+    }
+    
+    @IBInspectable dynamic open var placeholderXPadding: CGFloat = 30 {
+        didSet {
+            updatePlaceholder()
+        }
+    }
+    
+    @IBInspectable dynamic open var leftImage: UIImage? {
+        didSet {
+            updateLeftView()
+        }
+    }
+    
+    @IBInspectable dynamic open var leftPadding: CGFloat = 16 {
+        didSet {
+            updateLeftView()
+        }
+    }
+    
+    @IBInspectable var leftImgaeWidth: CGFloat = 24 {
+        didSet {
+            updateLeftView()
+        }
+    }
+    
+    @IBInspectable var leftImageHeight: CGFloat = 20 {
+        didSet {
+            updateLeftView()
+        }
+    }
+    
+    @IBInspectable var rightImage: UIImage? {
+        didSet {
+            updateRightView()
+        }
+    }
+    
+    @IBInspectable var rightPading: CGFloat = 0 {
+        didSet {
+            updateRightView()
+        }
+    }
+    
+    @IBInspectable var rightImageWidth: CGFloat = 24 {
+        didSet {
+            updateRightView()
+        }
+    }
+    
+    @IBInspectable var rightImageHeight: CGFloat = 24 {
+        didSet {
+            updateRightView()
+        }
+    }
+
 } // swiftlint:disable:this file_length
